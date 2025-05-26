@@ -1,0 +1,34 @@
+<!--Determinar si un número es primo o no-->
+<!--Pide al usuario un número entero publico-->
+<!--Crea una funcón que devuelva true si el número es primo y false si no lo es-->
+<!--Utiliza un bucle for para comprobar si el número es divisible por algún número entre 2 y la raíz cuadrada del número-->
+<!--Muestra el resultado al usuario-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Números Primos</title>
+    <script>
+        function esPrimo(num) {
+            if (num <= 1) return false; // Los números menores o iguales a 1 no son primos
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false; // Si es divisible por cualquier número, no es primo
+            }
+            return true; // Si no es divisible por ningún número, es primo
+        }
+
+        function verificarNumeroPrimo() {
+            let num = parseInt(prompt("Introduce un número entero positivo:"));
+            if (isNaN(num) || num < 1) {
+                alert("Por favor, introduce un número entero positivo válido.");
+                return;
+            }
+            if (esPrimo(num)) {
+                alert(`${num} es un número primo.`);
+            } else {
+                alert(`${num} no es un número primo.`);
+            }
+        }
+    </script>
+</html>

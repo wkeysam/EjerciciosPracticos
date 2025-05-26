@@ -1,0 +1,39 @@
+<!--Crear un archivo Javascript donde solicite la edad mediante un prompt()-->
+<!--Según la edad, muestra un mensaje con alert()-->
+<!--Menores de 13: "Eres un niño"-->
+<!--Entre 13 y 17: "Eres un adolescente"-->
+<!--Entre 18 y 64: "Eres un adulto"-->
+<!--A partir de 65: "Eres un adulto mayor"-->
+<!---Si el usuario introduce un valor númerico, muestra "Por favor, intruduce un número válido"-->
+<!DOCTYPE html>
+<html lang="es">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edad del Usuario</title>
+    <script>
+        function verificarEdad() {
+            // Solicita edad del usuario
+            let edad = prompt("Por favor, introduce tu edad:");
+           // Si no se intruduce un valor válido, muestra un mensaje de alerta
+            if (isNaN(edad) || edad === null || edad.trim() === "") {
+                alert("Por favor, introduce un número válido");
+            } else {
+                edad = Number(edad);
+                //Solicita mensaje con alert() según la edad
+                if (edad < 13) {
+                    alert("Eres un niño");
+                } else if (edad >= 13 && edad <= 17) {
+                    alert("Eres un adolescente");
+                } else if (edad >= 18 && edad <= 64) {
+                    alert("Eres un adulto");
+                } else {
+                    alert("Eres un adulto mayor");
+                }
+            }
+        }
+    </script>    
+    </head>
+    <body onload="verificarEdad()">
+       </body>
+       </html>

@@ -1,0 +1,41 @@
+<!--Crear un programa que genere un patrón de asteriscos-->
+<!--Pide al usuario un número entre 3 y 10-->
+<!--Utilizando bucles anidados, genera un patrón como este (ejemplo para n=5):-->
+<!-- 
+ .
+ ..
+ ...
+ ....
+ .....-->
+ <!--Muestra el patrón en la consola-->
+ <!--Añade validación para asegurar que el número esta entre 3 y 10-->
+<!DOCTYPE html>
+<html lang="es">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Patrón de Asteriscos</title>
+    <script>
+        function generarPatron() {
+            let n = parseInt(prompt("Introduce un número entre 3 y 10:"));
+
+            if (isNaN(n) || n < 3 || n > 10) {
+                alert("Por favor, introduce un número válido entre 3 y 10.");
+                return;
+            }
+
+            let patron = "";
+            for (let i = 1; i <= n; i++) {
+                patron += "*".repeat(i) + "\n";
+            }
+
+            console.log(patron);
+            alert("Patrón generado en la consola.");
+        }
+    </script>
+</head>
+<body>
+    <h2>Generador de Patrón de Asteriscos</h2>
+    <button onclick="generarPatron()">Generar Patrón</button>
+</body>
+</html>

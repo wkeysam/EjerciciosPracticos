@@ -1,0 +1,44 @@
+<!--Calculadora de nota final-->
+<!--Objetivo: Determinar la nota final de una estudiante y si ha aprobado.-->
+<!--Pide tres notas (exámenes), al usuario con vlaores del 0 al 10 -->
+<!-- Calcular el promedio de las tres notas--> 
+ <!-- según el promedio, muestra un mensaje: Menos de 5: "Has suspendido"-->
+<!-- Entre 5 y 6.9: "Aprobado"-->
+<!-- Entre 7 y 8.9: "Notable"-->
+<!-- Entre 9 y 10: "Sobresaliente"-->
+<!--Utiliza estructuras if-else if para implementar la lógica-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Nota Final</title>
+    <script>
+        function calcularNotaFinal() {
+            // Solicita las tres notas al usuario
+            let nota1 = parseFloat(prompt("Introduce la primera nota (0-10):"));
+            let nota2 = parseFloat(prompt("Introduce la segunda nota (0-10):"));
+            let nota3 = parseFloat(prompt("Introduce la tercera nota (0-10):"));
+
+            // Verifica que las notas estén en el rango correcto
+            if ((nota1 < 0 || nota1 > 10) || (nota2 < 0 || nota2 > 10) || (nota3 < 0 || nota3 > 10)) {
+                alert("Por favor, introduce valores entre 0 y 10.");
+                return;
+            }
+
+            // Calcula el promedio de las notas
+            let promedio = (nota1 + nota2 + nota3) / 3;
+
+            // Determina el mensaje según el promedio
+            if (promedio < 5) {
+                alert("Has suspendido");
+            } else if (promedio >= 5 && promedio < 7) {
+                alert("Aprobado");
+            } else if (promedio >= 7 && promedio < 9) {
+                alert("Notable");
+            } else {
+                alert("Sobresaliente");
+            }
+        }
+    </script>
+</html>

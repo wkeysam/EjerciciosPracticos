@@ -1,0 +1,50 @@
+<!--Implementar una calculadora básica usando la estructura switch-->
+<!--Pide al usuario dos números-->
+<!--usa una estructura switch para realizar la operación correspondiente-->
+<!--Muestra el resultado al usuario-->
+<!-- si se intenta dividir por cero, muestra un mensaje de error-->
+<!DOCTYPE html>
+<html lang="es">    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica</title>
+    <script>
+        function calcular() {
+            const num1 = parseFloat(prompt("Introduce el primer número:"));
+            const num2 = parseFloat(prompt("Introduce el segundo número:"));
+            const operacion = prompt("Elige una operación: +, -, *, /");
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Por favor, introduce números válidos.");
+                return;
+            }
+
+            switch (operacion) {
+                case '+':
+                    alert(`Resultado: ${num1 + num2}`);
+                    break;
+                case '-':
+                    alert(`Resultado: ${num1 - num2}`);
+                    break;
+                case '*':
+                    alert(`Resultado: ${num1 * num2}`);
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        alert("Error: No se puede dividir por cero.");
+                    } else {
+                        alert(`Resultado: ${num1 / num2}`);
+                    }
+                    break;
+                default:
+                    alert("Operación no válida. Por favor, elige +, -, * o /.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora Básica</h1>
+    <button onclick="calcular()">Calcular</button>
+</body>
+</html>

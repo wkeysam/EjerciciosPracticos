@@ -1,0 +1,45 @@
+<!--Pide al usuario que cree una contraseña-->
+<!--La contraseña debe cumplir estas condiciones-->
+<!--Tener al menos 8 caracteres-->
+<!--Contener al menos un numero-->
+<!--Contener al menos una letra mayúscula-->
+<!-- utilizar un bucle do-while para seguir pidiendo la contraseña hasta que se cumplan los requisitos-->
+ <!--Cuando la contraseña sea válida, muestra "Contraseña creada con éxito"-->
+ <!--Cuando la contraseña sea válida, muestra "Contraseña creada con éxito"-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Contraseña</title>
+    <script>
+        function validarContrasena() {
+            let contrasena;
+            do {
+                contrasena = prompt("Crea una contraseña (mínimo 8 caracteres, al menos un número y una letra mayúscula):");
+
+            } while (!esContrasenaValida(contrasena));
+            
+            alert("Contraseña creada con éxito");
+        }
+
+        function esContrasenaValida(contrasena) {
+            if (contrasena === null) {
+                return false;
+            }
+
+            const tieneLongitudMinima = contrasena.length >= 8;
+            const tieneNumero = /\d/.test(contrasena); 
+            const tieneMayuscula = /[A-Z]/.test(contrasena); 
+
+            return tieneLongitudMinima && tieneNumero && tieneMayuscula;
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Validador de Contraseña</h1>
+    <p>Haz clic en el botón para crear tu contraseña.</p>
+    <button onclick="validarContrasena()">Crear Contraseña</button>
+</body>
+</html>

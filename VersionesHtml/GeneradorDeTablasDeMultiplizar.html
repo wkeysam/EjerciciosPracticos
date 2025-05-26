@@ -1,0 +1,33 @@
+<!--Crear un programa que genere la tabla de multiplicar del número que elija el usuario-->
+<!--Pide al usuario un número entre el 1 y 20-->
+<!--Utilizando una bucle for, genera la tabla de multiplicar de ese número del 1 al 10-->
+<!--Muestra cada línea en la consola con el formato: "5x3=15"-->
+<!--Al final, muestra un mensaje con la suma total de todos los resultados-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Generador de Tablas de Multiplicar</title>
+        <script>
+            function generarTablaMultiplicar() {
+                let numero = parseInt(prompt("Introduce un número entre 1 y 20:"));
+
+                if (isNaN(numero) || numero < 1 || numero > 20) {
+                    alert("Por favor, introduce un número válido entre 1 y 20.");
+                    return;
+                }
+
+                let sumaTotal = 0;
+                let resultado = "";
+
+                for (let i = 1; i <= 10; i++) {
+                    let multiplicacion = numero * i;
+                    resultado += `${numero} x ${i} = ${multiplicacion}\n`;
+                    sumaTotal += multiplicacion;
+                }
+
+                console.log(resultado);
+                alert(`La suma total de todos los resultados es: ${sumaTotal}`);
+            }
+        </script>
