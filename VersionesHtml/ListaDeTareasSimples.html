@@ -1,0 +1,65 @@
+<!--Crear un sistema de tareas que permite-->
+<!--Mostar todas las tareas-->
+<!--Marcar tareas como completadas-->
+<!--Contar tareas pendientes-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas Simples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .task-input {
+            margin-bottom: 10px;
+        }
+    </style>
+    </head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <input type="text" id="taskInput" class="task-input" placeholder="Añadir nueva tarea">
+    <button onClick="addTask()">Añadir Tarea</button>
+    <ul id="taskList">
+        <p>Tareas Pendientes: <span id="pendingCount">0</span></p>
+            
+            <script>
+                function addTask() {
+                 let taskInput = document.getElementById('taskInput');
+                let taskText = taskInput.value.trim();
+                if (taskText === '') return; 
+                    let taskList = document.getElementById('taskList');
+                    let newTask = document.createElement("li");
+                    newTask.textContent = taskText;
+                    newTask.onclick = function() {    
+                    this.classList.toggle('completed');
+                        updatePendingCount();
+                    };
+                    
+                   taskList.appendChild(newTask);
+                   taskInput.value = "";
+                   updatePendingCount();
+        
+                function updatePendingCount() {
+                let tasks = document.querySelectorAll('#taskList li');
+                let pendingTasks = Array.from(tasks).filter(task => !task.classList.contains("completed")).length;
+                 document.getElementById('pendingCount').textContent = pendingTasks; // Usar pendingTasks correctamente
+              }
+                    
+            }
+            </script>
+        </p>
+    </ul>
+</html>
