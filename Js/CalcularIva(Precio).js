@@ -12,6 +12,6 @@
 
            
             console.log(CalcularIva(100)); 
-            console.log(CrearSaludo("Juan", "Pérez")); 
+            console.log(CrearSaludo("Samuel")); 
             console.log(esMayorDeEdad(20));
         
