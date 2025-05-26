@@ -1,0 +1,27 @@
+<!--CalcularIva(Precio)-Que devuelva el precio +21%De Iva-->
+<!--CrearSaludo(nombre, apellidos'-que devuelva "Hola [nombre] [apellidos]")-->
+<!--'esMayorDeEdad(edad)'-que devulva true si edad>=18-->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calcular IVA</title>
+        <script> 
+            function CalcularIva(precio) {
+                return precio * 1.21;
+            }
+
+            function CrearSaludo(nombre, apellidos) {
+                return `Hola ${nombre} ${apellidos}`;
+            }
+
+            function esMayorDeEdad(edad) {
+                return edad >= 18;
+            }
+
+           
+            console.log(CalcularIva(100)); 
+            console.log(CrearSaludo("Juan", "Pérez")); 
+            console.log(esMayorDeEdad(20));
+        </script>
